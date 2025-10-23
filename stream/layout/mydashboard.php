@@ -31,15 +31,15 @@ $profileurl = new moodle_url('/user/profile.php', ['id' => $USER->id]);
     <!-- Sidebar -->
 <nav id="sidebar" class="expanded">
     <ul>
-        <li><a href="<?= new moodle_url('/my/'); ?>"><img class="menu-icon"  src="<?= new moodle_url('/theme/stream/pix/icons/management.svg'); ?>" alt="Панель управления" width="18" height="18"><span class="label">Панель управления</span></a></li>
-                <li><a href="<?= new moodle_url('/course/index.php'); ?>"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/book.svg'); ?>" alt="Каталог курсов" width="18" height="18"><span class="label">Каталог курсов</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/monitor.svg'); ?>" alt="Управление обучением" width="18" height="18"><span class="label">Управление обучением</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/presentation.svg'); ?>" alt="Курсы" width="18" height="18"><span class="label">Курсы</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/modul.svg'); ?>" alt="Модули обучения" width="18" height="18"><span class="label">Модули обучения</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/rating.svg'); ?>" alt="Рейтинг" width="18" height="18"><span class="label">Рейтинг</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/users.svg'); ?>" alt="Компетенции" width="18" height="18"><span class="label">Компетенции</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/star.svg'); ?>" alt="Отчёты" width="18" height="18"><span class="label">Отчёты</span></a></li>
-        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/mouse.svg'); ?>" alt="Администрирование" width="18" height="18"><span class="label">Администрирование</span></a></li>
+        <li><a href="<?= new moodle_url('/my/'); ?>"><img class="menu-icon"  src="<?= new moodle_url('/theme/stream/pix/icons/management.svg'); ?>" alt="Панель управления" width="18" height="18"><span class="label">Dashboard</span></a></li>
+                <li><a href="<?= new moodle_url('/course/index.php'); ?>"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/book.svg'); ?>" alt="Каталог курсов" width="18" height="18"><span class="label">Course Catalog</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/monitor.svg'); ?>" alt="Управление обучением" width="18" height="18"><span class="label">Learning Management</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/presentation.svg'); ?>" alt="Курсы" width="18" height="18"><span class="label">Courses</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/modul.svg'); ?>" alt="Модули обучения" width="18" height="18"><span class="label">Learning Modules</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/rating.svg'); ?>" alt="Рейтинг" width="18" height="18"><span class="label">Rating</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/users.svg'); ?>" alt="Компетенции" width="18" height="18"><span class="label">Competencies</span></a></li>
+        <li><a href="#"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/star.svg'); ?>" alt="Отчёты" width="18" height="18"><span class="label">Reports</span></a></li>
+        <li><a href="<?= new moodle_url('/admin/'); ?>"><img class="menu-icon" src="<?= new moodle_url('/theme/stream/pix/icons/mouse.svg'); ?>" alt="Администрирование" width="18" height="18"><span class="label">Administration</span></a></li>
     </ul>
 </nav>
 
