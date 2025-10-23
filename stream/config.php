@@ -70,6 +70,10 @@ $THEME->activityheaderconfig = [
 // Remove main menu nodes given the theme settings.
 $THEME->removedprimarynavitems = explode("," , get_config('theme_stream', 'hideprimarynodes'));
 
+$THEME->javascripts_footer = ['carousel'];
+
+
+
 // Used layouts.
 $THEME->layouts = [
     // Main course page.
