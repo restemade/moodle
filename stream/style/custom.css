@@ -1,0 +1,466 @@
+/* === Общие стили === */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === Верхняя панель (Topbar) === */
+.topbar {
+    background-color: #0089D1; /* Новый цвет */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    /* Скругления удалены */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.user-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* === Бургер-кнопка === */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* === Обёртка страницы === */
+#dashboard-wrapper {
+    display: flex;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+/* === Сайдбар === */
+#sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding-top: 20px;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    flex-shrink: 0;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.06);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#sidebar.closed {
+    width: 60px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    margin: 5px 0;
+}
+
+#sidebar a {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание иконки и текста */
+    justify-content: center;
+    padding: 12px 20px;
+    gap: 30px;
+    color: #333;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    background-color: #f1f1f1;
+    border-radius: 0 20px 20px 0;
+}
+
+/* SVG или PNG иконки */
+.menu-icon {
+    /* width: 24px; Фиксированный размер иконки */
+    /* height: 24px; */
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    flex-shrink: 0; /* Предотвращает сжатие иконки */
+    object-fit: contain; /* Для SVG/PNG, чтобы сохранить пропорции */
+    vertical-align: middle; /* Дополнительное выравнивание для PNG */
+    transition: transform 0.3s;
+    pointer-events: none; /* Отключает взаимодействие с иконкой */
+}
+
+/* Иконки в сжатом состоянии */
+#sidebar.closed .menu-icon {
+    margin: 0 auto; /* Центрирование иконки */
+    margin-right: 0; /* Убираем отступ справа */
+}
+
+/* Текст в пунктах меню */
+.label {
+    flex-grow: 1; /* Текст занимает доступное пространство */
+    font-size: 16px; /* Размер шрифта для текста */
+    line-height: 24px; /* Высота строки соответствует высоте иконки для выравнивания */
+    color: #333; /* Цвет текста, совпадающий с #sidebar a */
+    transition: opacity 0.3s ease; /* Плавное исчезновение текста при сжатии */
+}
+
+/* Текст в пунктах меню */
+#sidebar.closed .label {
+    display: none; /* Скрываем текст в сжатом состоянии */
+}
+
+/* Активный пункт меню */
+#sidebar a.active {
+    background-color: #e8f4fd;
+    border-right: 4px solid #0089D1;
+}
+
+/* === Контентная область === */
+#main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
+
+/* === Заголовки и хлебные крошки === */
+.page-header {
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    color: #0089D1;
+}
+
+/* === Исправление отображения пути (breadcrumb) === */
+.breadcrumb {
+    background: none !important;
+    color: #333 !important;
+    padding: 0 !important;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ссылки внутри breadcrumb */
+.breadcrumb a {
+    color: #0089D1; /* цвет ссылок */
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* === Карточки курсов === */
+.course-list {
+    margin-top: 20px;
+}
+
+.course-card {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+    margin: 0 0 10px;
+}
+
+.course-summary {
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #0089D1;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0075b3;
+}
+
+/* === Адаптивность === */
+@media (max-width: 768px) {
+    #sidebar {
+        position: absolute;
+        z-index: 999;
+        height: calc(100vh - 60px);
+        top: 60px;
+        left: 0;
+    }
+
+    #sidebar.closed {
+        transform: translateX(-100%);
+        width: 250px;
+    }
+
+    #dashboard-wrapper {
+        flex-direction: column;
+    }
+
+    #main-content {
+        padding: 80px 20px 20px 20px;
+    }
+}
+
+.course-filters {
+    margin: 20px 0;
+}
+
+.filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-grid select,
+.filter-grid input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    min-width: 220px;
+}
+
+.course-list {
+    margin-top: 30px;
+}
+
+.course-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.course-card h3 a {
+    color: #0089D1;
+    text-decoration: none;
+}
+
+.course-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.course-summary {
+    color: #555;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0089D1;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0076b6;
+}
+
+.dashboard-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.user-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f8f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.user-avatar-img {
+    border-radius: 50%;
+    border: 3px solid #fff;
+    width: 80px;
+    height: 80px;
+}
+
+.user-name h2 {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stats-boxes {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-box {
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    min-width: 90px;
+}
+
+.stat-value {
+    font-size: 24px;
+    color: #0288d1; /* Цвет верхнего меню */
+    font-weight: bold;
+}
+
+.stat-count {
+    color: #0089D1; /* Цвет верхнего меню */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.block-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.learning-results-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.learning-results-card h3 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.learning-circles {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.circle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-wrap.big .circle-progress {
+    width: 100px;
+    height: 100px;
+    font-size: 18px;
+}
+
+.circle-progress {
+    --size: 70px;
+    --value: 75;
+    --color: #4CAF50;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color);
+    background:
+            conic-gradient(var(--color) calc(var(--value) * 1%), #e6e6e6 0%);
+    position: relative;
+}
+
+.circle-progress::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.circle-progress span {
+    position: relative;
+    z-index: 2;
+}
+
+.label {
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+
+

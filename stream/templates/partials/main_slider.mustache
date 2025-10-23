@@ -1,0 +1,103 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_stream/head
+
+    Stream head template.
+
+    Example context (json):
+    { "output" :
+        {
+            "index" : 0,
+            "active" : 1,
+            "single" : 1,
+            "sliderimage" : "beautiful.jpg",
+            "homepageheroimage" : "https://placehold.co/1920x600",
+            "herotitle": "Slider title",
+            "slidermotto": "This is my motto",
+            "sliderlink": "https://google.com",
+            "sliderbutton": "My text",
+            "themepath": "/theme/stream"
+        }
+    }
+}}
+
+<style>
+#herocarousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#herocarousel .carousel-item {
+    height: 600px !important; /* Базовая высота */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+</style>
+
+<div id="herocarousel"
+     class="carousel slide"
+     data-ride="carousel"
+     data-interval="3000"
+     data-pause="hover"
+     style=" overflow: hidden;  width: 100%;">
+
+    <!-- Слайды -->
+    <div class="carousel-inner">
+        {{#slides}}
+        <div class="carousel-item {{#active}}active{{/active}}"
+             style="background-image: url('{{{sliderimage}}}');">
+            <div class="carousel-caption d-none d-md-block"
+                 style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); text-align: left;">
+                <h1 style="font-size: 3em; color: #fff; font-weight: bold; text-shadow: 2px 2px 6px rgba(0,0,0,0.7);">
+                    {{herotitle}}
+                </h1>
+                <p style="font-size: 1.3em; color: #eee; margin-bottom: 20px;">{{slidermotto}}</p>
+                {{#sliderlink}}
+                <a href="{{{sliderlink}}}"
+                   class="btn btn-success btn-lg"
+                   style="border-radius: 30px; padding: 12px 25px; font-weight: 600;">
+                    {{sliderbutton}}
+                </a>
+                {{/sliderlink}}
+            </div>
+        </div>
+        {{/slides}}
+    </div>
+
+    <!-- Управление стрелками -->
+    <div class="carousel-controls" style="position: absolute; bottom: 100px; display: flex;">
+        <a class="carousel-control-prev"
+           href="#herocarousel"
+           role="button"
+           data-slide="prev"
+           style="position: absolute; left: 120px; border-radius: 10px; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.5); display: inline-flex; align-items: center; justify-content: center;">
+            <img src="theme/stream/pix/icons/vector.png" alt="Previous" >
+        </a>
+
+        <a class="carousel-control-next"
+           href="#herocarousel"
+           role="button"
+           data-slide="next"
+           style="position: absolute; left: 60px; border-radius: 10px; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.5); display: inline-flex; align-items: center; justify-content: center;">
+            <img src="theme/stream/pix/icons/vector.png" alt="Next" style=" transform: rotate(180deg);">
+        </a>
+    </div>
+</div>

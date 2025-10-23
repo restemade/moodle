@@ -1,0 +1,119 @@
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+<div id="page-wrapper" class="d-print-block">
+
+  {{{ output.standard_top_of_body_html }}}
+
+  {{> theme_boost/navbar }}
+
+  <div id="page" data-region="mainpage" data-usertour="scroller" class="homepage drag-container" style="background-color:#ffffff;">
+    <div id="topofscroll" class="main-inner">
+      <div id="page-content" class="pb-3 mt-100 d-print-block" style="margin-top:200px; background-color:#ffffff;">
+        <div id="region-main-box" style="background-color:#ffffff;">
+          <section id="region-main" aria-label="{{#str}}content{{/str}}" style="background-color:#ffffff;">
+
+            {{{ output.course_content_header }}}
+            {{#headercontent}}
+              {{> core/activity_header }}
+            {{/headercontent}}
+
+            {{> theme_stream/partials/main_slider }}
+
+<!-- Блок "Для чего этот портал?" -->
+<section class="portal-purpose" style="position: absolute; width:100%; z-index: 20; top: 570px; background-color:#ffffff; padding:100px 0; border-radius:32px 32px 0 0;">
+
+  <!-- ЭЛЛИПС ВЫХОДИТ ИЗ СЕКЦИИ -->
+  <div style="position: absolute; top: 10px; right: 0px; z-index: 1002;">
+    <img src="theme/stream/pix/ellipse.png" alt="" style=" object-fit: cover;">
+  </div>
+
+  <!-- КОНТЕНТ -->
+  <div class="portal-purpose__container" style="max-width:1360px; margin:0 auto; padding:0 20px; position: relative; z-index: 2;">
+    <h2 class="portal-purpose__title" style="color:#000; font-family:'FreeSetLightC',sans-serif; font-size:48px; font-style:normal; font-weight:400; line-height:120%; margin-bottom:32px; text-align:left;">
+      Для чего этот портал?
+    </h2>
+    <p class="portal-purpose__text" style="color:#000; font-family:'Helvetica Neue',sans-serif; font-size:32px; font-style:normal; font-weight:400; line-height:120%; width:100%; text-align:left;">
+      Здесь вы можете пройти курсы, развить личные и профессиональные навыки, получить сертификаты и стать частью сообщества специалистов.
+    </p>
+  </div>
+</section>
+
+            <!-- Доступные курсы -->
+            <section id="real-courses" class="container" style="margin-top: 100px; max-width:1380px;">
+              <h2 style="text-align:left; font-size:2rem; margin-bottom:50px; font-family:'FreeSetLightC',sans-serif;">Доступные курсы</h2>
+              <div class="real-courses-container" style="display:flex; flex-wrap:wrap; justify-content:flex-start; gap:10px;">
+                {{#courses}}
+                  <a href="{{url}}" class="course-card" style="width:320px; height:420px; background-image:url('{{image}}'); background-size:cover; background-position:center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition:transform 0.3s ease, box-shadow 0.3s ease; text-decoration:none; color:white; display:block; cursor:pointer;">
+                    <div class="overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; padding:20px; background:none; display:flex; flex-direction:column; justify-content:flex-start; text-align:left;">
+                      <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:10px; text-shadow:0 2px 5px rgba(0,0,0,0.5);">{{fullname}}</h3>
+                      <p style="font-size:0.9rem; color:#f0f0f0; text-shadow:0 1px 3px rgba(0,0,0,0.5);">{{summary}}</p>
+                    </div>
+                  </a>
+                {{/courses}}
+                {{^courses}}
+                  <p style="font-size:1.2rem; color:#555;">Нет доступных курсов</p>
+                {{/courses}}
+              </div>
+            </section>
+
+            <!-- Наши преимущества -->
+            <section id="advantages" class="container" style="z-index: 1001 !important; background-color:#CED2D64D; border-radius:16px; max-width:1360px; height:452px; margin: 120px auto; padding:60px 80px; box-shadow:0 6px 20px rgba(0,0,0,0.08); display:flex; flex-direction:column; justify-content:center;">
+              <h2 style="font-size:2rem; text-align:left; margin-bottom:40px; font-weight:700; color:#111; font-family:'FreeSetLightC',sans-serif;">Наши преимущества</h2>
+              <div class="advantages-container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px;">
+                <ul class="advantages-list" style="list-style:none; padding:0; margin:0; width:45%;">
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Удобная и интуитивно понятная платформа
+                  </li>
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Возможность обучаться в любое время
+                  </li>
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Поддержка наставников и обратная связь
+                  </li>
+                </ul>
+
+                <ul class="advantages-list" style="list-style:none; padding:0; margin:0; width:45%;">
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Сертификаты, подтверждающие компетенции
+                  </li>
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Постоянное обновление контента
+                  </li>
+                  <li style="font-size:1.1rem; color:#222; margin-bottom:20px; display:flex; align-items:center; line-height:1.5;">
+                    <span class="checkmark" style="background:linear-gradient(135deg,#1ea7fd,#007bff); color:white; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; width:28px; height:28px; margin-right:15px; font-size:1rem; font-weight:bold;">✔</span>
+                    Сообщество профессионалов и единомышленников
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <style>
+@media (max-width: 768px) {
+  #advantages { padding: 30px 15px !important; }
+  .advantages-container { flex-direction: column !important; gap: 20px !important; }
+  .advantages-list { width: 100% !important; }
+  /* КУРСЫ В МОБИЛКЕ */
+  #real-courses { margin-top: 600px !important; }
+}
+
+</style>
+
+          </section>
+        </div>
+      </div>
+    </div>
+
+    {{> theme_stream/partials/footer }}
+
+  </div>
+
+  {{{ output.standard_after_main_region_html }}}
+</div>
+</body>
+</html>
